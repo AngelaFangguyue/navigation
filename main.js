@@ -35,8 +35,8 @@ let $last = $(".last");
 //定义hashData数据;
 let a = localStorage.getItem("hashDa");
 let hashL = JSON.parse(localStorage.getItem("hashDa"));
-//console.log("a hashL", a, hashL);
-if (hashL.length === 0) {
+console.log("a hashL", a, hashL);
+if (hashL.length === 0 || hashL === "") {
   window.hashData = [
     {
       logo: "J",
@@ -46,7 +46,7 @@ if (hashL.length === 0) {
     },
     {
       logo: "S",
-      img:img_sifou,
+      img: img_sifou,
       urll: "segmentfault.com",
       href: "https://segmentfault.com/"
     },
@@ -76,7 +76,7 @@ if (hashL.length === 0) {
     },
     {
       logo: "Y",
-      img:img_yx3,
+      img: img_yx3,
       urll: "yinxiang.com",
       href: "https://yinxiang.com/"
     },
@@ -133,12 +133,12 @@ function render() {
       </div>
       </a>`);
     } else if (node.img.indexOf("/") === 0) {
-     // console.log('node.img.indexOf("/"');
-     // console.log(node.img);
+      // console.log('node.img.indexOf("/"');
+      // console.log(node.img);
       $newA = $(`<a href='${node.href}'>
       <div class="con">
         <div class="logo">
-        ${'<img src="' + node.img + '" alt=" '+node.logo+'">'}
+        ${'<img src="' + node.img + '" alt=" ' + node.logo + '">'}
         </div>
         <div class="urll">${node.urll}</div>
         <div class="close">
@@ -171,7 +171,7 @@ function render() {
     });
   });
   //下面这段话并不会随机获取背景图片
-  console.log("body.css",$("body").css("background-image"));
+  console.log("body.css", $("body").css("background-image"));
   $("body").css(
     "background-image",
     "url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302)"
@@ -289,4 +289,3 @@ $(".bt2").on("click", () => {
 //   e.stopPropagation();
 //   e.preventDefault();
 // });
-
