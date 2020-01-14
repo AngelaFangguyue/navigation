@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input {
+  border: none;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+body {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* background-image: url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302); */
+}
+@media (min-width: 800px) {
+  body {
+    /* background-color: red; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302);
+  }
+}
+header.hea {
+  overflow: hidden; /*加这个是向下滚动的时候，让header固定悬浮在窗口最上方，宽度是正常宽度，要不然的话，header的宽度就只包含了input的宽度，而没有加上form的margin。margin合并的原因*/
+  /* margin: 20px; */
+}
+
+header.hea form.for {
+  /* border: 1px solid blue; */
+  margin: 40px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 800px) {
+  header.hea form.for {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+header.hea form.for input.inp {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+header.hea form.for button.but {
+  white-space: nowrap;
+  padding: 0 28px;
+  border: none;
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+  background-color: #0282b9;
+  color: white;
+  font-size: 16px;
+}
+main.mai {
+  /* outline: 5px solid blue; */
+  margin: 20px; /*//这个margin:20px也可以加在div.wrap上面 */
+}
+@media (min-width: 800px) {
+  main.mai {
+    /* min-width: 900px; */
+    width: 900px; /*这里要固定一个宽度*/
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+main.mai div.wra {
+  /* outline: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 800px) {
+  main.mai div.wra {
+    /* margin-left: 0; */
+    margin-right: -25px;
+    /* justify-content: flex-start; */
+    justify-content: center;
+    /*将其做成和google的一样，这里是block，那么里面的a标签就要写成inline-block*/
+    /* display: block;
+    text-align: center; */
+  }
+}
+main.mai div.wra a {
+  margin-bottom: 25px;
+}
+/* 这是解决新增站点的div的下边距问题，这个问题是在修改点击其他标签之间的间隔也会跳转问题时产生的又一bug */
+.last {
+  margin-bottom: 25px;
+}
+@media (min-width: 800px) {
+  /*将其做成和google的一样,把a标签变为inline-block;同时把加给div.con的margin-right加给了a*/
+  main.mai div.wra a {
+    margin-right: 25px; /*之前这个25是加给了div.con，现在加给a是为了避免点击空隙的时候，因为空隙也属于a标签，导致会跳转*/
+    /*display: inline-block; /*a标签本来是内联，将其转换为inline-block,这样做是为了和google那样的布局*/
+    /*vertical-align: middle; /*加了这一句，最后就都能对齐了 */
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+  }
+  div.last {
+    margin-right: 25px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+    /* background-color: #fff; */
+  }
+  /* main.mai div.wra div.last {
+    display: inline-block; /*本来最后一个div是block元素，但是因为和a同级，现在看它总是比a高了一点，现在设置一下，看看结果*/
+  /*} */
+}
+main.mai div.wra div.con {
+  /* border: 1px solid red; */
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 243, 243, 0.911);
+  /* margin-bottom: 10px; */ /*将这个10px的下边距加给了a，避免点击下方空隙会跳转*/
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+  position: relative;
+}
+main.mai div.wra div.last {
+  background-color: #fff;
+}
+@media (min-width: 800px) {
+  /*添加鼠标浮上去的动态效果*/
+
+  .last:hover {
+    transform: translate3d(0, -10px, 0);
+    /* background-color: #fff; */
+  }
+  main.mai div.wra a:hover {
+    transform: translate3d(0, -10px, 0);
+  }
+  main.mai div.wra .con:hover {
+    background-color: #fff;
+  }
+} /*把这个margin加在了a标签上了,避免点击空隙也会跳转 */
+/*@media (min-width: 800px) {
+  main.mai div.wra div.con {
+    display: inline-flex; /*为了做到和google一样的布局*/
+/* }
+}*/
+main.mai div.wra div.con div.logo {
+  /* border: 1px solid red; */
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.mai div.wra div.con div.urll {
+  /* border: 1px solid green; */
+  font-size: 14px;
+  margin-top: 8px;
+}
+main.mai div.wra div.con div.close {
+  /* border: 1px solid green; */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: none;
+  padding: 5px;
+  /* width: 20px; */
+}
+main.mai div.wra div.con div.close .icon {
+  /* width: 20px; */
+  /* height: 30px; */
+}
+main.mai div.wra div.con:hover div.close {
+  display: block;
+}
+main.mai div.wra div.con .iconadd {
+  width: 56px;
+  height: 56px;
+}
+
+/* //自己定义更改图标，然后变换背景图片 */
+.changewra {
+  /* position: fixed; */
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.changewra a {
+  margin-bottom: 5px;
+}
+.changewra > div {
+  margin: 15px 0;
+  cursor: pointer;
+}
+.changewra img {
+  width: 30px;
+  height: 30px;
+}
+div.popwra {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+  visibility: hidden;
+}
+
+/* div.popwra div.ale, */
+div.popwra div.pop {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 40px 25px 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  /* display: flex;*/ /*加了flex之后，宽度会比内部div的宽度要宽一点，但这里其实不需要flex，因为内部又用div包起来了*/
+  /* flex-wrap: wrap; */
+  transition: all 0.5s ease-in-out;
+}
+/* div.popwra div.ale {
+  padding: 60px 160px;
+  color: rgb(20, 20, 20);
+  font-size: 20px;
+  display: none;
+} */
+div.popwra div.pop div.an {
+  width: 200px;
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+@media (min-width: 800px) {
+  div.popwra div.pop div.an {
+    width: 500px;
+  }
+}
+div.popwra div.pop input {
+  width: 100%;
+  border: none;
+  outline: none;
+  /* border: 1px solid #ddd;
+  border-radius: 4px; */
+
+  padding: 10px;
+}
+div.popwra div.pop label {
+  white-space: nowrap;
+  vertical-align: middle;
+  /* border: 1px solid red; */
+  padding: 5px 0 0;
+}
+.addbt {
+  padding: 8px 13px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  /* position: absolute; */
+  /* bottom: 5px; */
+  position: relative;
+  top: 5px;
+}
+.bt1 {
+  /* right: -120px; */
+  background-color: white;
+  right: -80px;
+}
+.bt2 {
+  right: -100px;
+  background-color: #0282b9;
+  color: white;
+  /* margin: 0 20px; */
+}
+@media (min-width: 800px) {
+  .bt1 {
+    /* right: -120px; */
+    background-color: white;
+    right: -330px;
+  }
+  .bt2 {
+    right: -370px;
+    background-color: #0282b9;
+    color: white;
+    /* margin: 0 20px; */
+  }
+  .bt1:hover {
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+  }
+  .bt2:hover {
+    background: #66b1ff;
+    /* border-color: #66b1ff; */
+    color: #fff;
+  }
+}
+div.wra a:hover,
+last:hover {
+  /* border: 2px solid red; */
+  transform: translateY(-10px);
+}
