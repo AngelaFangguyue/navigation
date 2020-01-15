@@ -28,8 +28,6 @@ import img_zh from "./img/zh.png";
 import img_zh2 from "./img/zh2.png";
 import img_zh3 from "./img/zh3.png";
 
-// import yx from "./img/yinxiang.png";
-
 let $last = $(".last");
 
 //定义hashData数据;
@@ -86,12 +84,6 @@ if (hashL === "" || hashL === null) {
       urll: "www.zhihu.com",
       href: "https://www.zhihu.com/"
     },
-    // {
-    //   logo: "A",
-    //   img: "aa",
-    //   urll: "acfun.cn",
-    //   href: "https://www.acfun.cn/"
-    // },
     {
       logo: "B",
       img: img_bili,
@@ -117,28 +109,12 @@ function render() {
   $last.siblings().remove();
   let $newA;
   hashData.forEach((node, index) => {
-    //console.log(node);
-    if (node.img.indexOf("http") === 0) {
-      //console.log(node.img);
+    console.log("hashdata foreach", node);
+    if (node.img !== "") {
       $newA = $(`<a href='${node.href}'>
       <div class="con">
         <div class="logo">
-         <img src="${node.img}" alt="${node.logo}">
-        </div>
-        <div class="urll">${node.urll}</div>
-        <div class="close">
-          <svg class="icon" aria-hidden="true">
-              <use xlink:href=${"#icon-iclose"}></use>
-          </svg></div>
-      </div>
-      </a>`);
-    } else if (node.img.indexOf("/") === 0) {
-      // console.log('node.img.indexOf("/"');
-      // console.log(node.img);
-      $newA = $(`<a href='${node.href}'>
-      <div class="con">
-        <div class="logo">
-        ${'<img src="' + node.img + '" alt=" ' + node.logo + '">'}
+        <img src="${node.img}">
         </div>
         <div class="urll">${node.urll}</div>
         <div class="close">
@@ -159,6 +135,47 @@ function render() {
       </div>
       </a>`);
     }
+    // if (node.img.indexOf("http") === 0) {
+    //   console.log('node.img.indexOf("http") === 0', node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">
+    //      <img src="${node.img}" alt="${node.logo}">
+    //     </div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // } else if (node.img.indexOf("/") === 0) {
+    //   console.log('node.img.indexOf("/")', node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">
+    //     ${'<img src="' + node.img + '" alt=" ' + node.logo + '">'}
+    //     </div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // } else {
+    //   console.log("node.img.else", node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">${node.logo}</div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // }
 
     $newA.insertBefore($last);
     //添加删除功能：
@@ -170,13 +187,12 @@ function render() {
       render();
     });
   });
-  //下面这段话并不会随机获取背景图片
+  //下面这段话每次刷新页面，随机获取背景图片
   console.log("body.css", $("body").css("background-image"));
   $("body").css(
     "background-image",
     "url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302)"
-  ); //每次重新渲染并不会执行获取随机图片
-  // console.log("设置背景图");
+  );
 }
 
 render();
@@ -269,9 +285,11 @@ $(".bt2").on("click", () => {
       url = ("https://" + url).toLowerCase();
     }
 
+    let lg = $("#in2").val();
+    console.log("lg", lg);
     hashData.push({
       logo: simpUrl(url)[0].toUpperCase(),
-      img: simpUrl(url)[0].toUpperCase(),
+      img: lg,
       urll: simpUrl(url),
       href: url
     });
@@ -288,4 +306,16 @@ $(".bt2").on("click", () => {
 // $(".popwra").on("keypress", "#in1", "#in2", e => {
 //   e.stopPropagation();
 //   e.preventDefault();
+// });
+
+//为解决手机端click以及touchstart事件的冲突
+// const Button = document.getElementById("targetButton");
+
+const clickEvent = (function() {
+  if ("ontouchstart" in document.documentElement === true) return "touchstart";
+  else return "click";
+})();
+
+// Button.addEventListener(clickEvent, e => {
+//   console.log("things happened!");
 // });

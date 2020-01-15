@@ -194,7 +194,6 @@ var _zh3 = _interopRequireDefault(require("./img/zh3.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import yx from "./img/yinxiang.png";
 var $last = $(".last"); //定义hashData数据;
 
 var a = localStorage.getItem("hashDa");
@@ -242,13 +241,7 @@ if (hashL === "" || hashL === null) {
     img: _zh3.default,
     urll: "www.zhihu.com",
     href: "https://www.zhihu.com/"
-  }, // {
-  //   logo: "A",
-  //   img: "aa",
-  //   urll: "acfun.cn",
-  //   href: "https://www.acfun.cn/"
-  // },
-  {
+  }, {
     logo: "B",
     img: _bilibili.default,
     urll: "www.bilibili.com",
@@ -268,17 +261,54 @@ function render() {
   $last.siblings().remove();
   var $newA;
   hashData.forEach(function (node, index) {
-    //console.log(node);
-    if (node.img.indexOf("http") === 0) {
-      //console.log(node.img);
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">\n         <img src=\"").concat(node.img, "\" alt=\"").concat(node.logo, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
-    } else if (node.img.indexOf("/") === 0) {
-      // console.log('node.img.indexOf("/"');
-      // console.log(node.img);
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">\n        ").concat('<img src="' + node.img + '" alt=" ' + node.logo + '">', "\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
+    console.log("hashdata foreach", node);
+
+    if (node.img !== "") {
+      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">\n        <img src=\"").concat(node.img, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
     } else {
       $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">").concat(node.logo, "</div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
-    }
+    } // if (node.img.indexOf("http") === 0) {
+    //   console.log('node.img.indexOf("http") === 0', node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">
+    //      <img src="${node.img}" alt="${node.logo}">
+    //     </div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // } else if (node.img.indexOf("/") === 0) {
+    //   console.log('node.img.indexOf("/")', node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">
+    //     ${'<img src="' + node.img + '" alt=" ' + node.logo + '">'}
+    //     </div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // } else {
+    //   console.log("node.img.else", node.img);
+    //   $newA = $(`<a href='${node.href}'>
+    //   <div class="con">
+    //     <div class="logo">${node.logo}</div>
+    //     <div class="urll">${node.urll}</div>
+    //     <div class="close">
+    //       <svg class="icon" aria-hidden="true">
+    //           <use xlink:href=${"#icon-iclose"}></use>
+    //       </svg></div>
+    //   </div>
+    //   </a>`);
+    // }
+
 
     $newA.insertBefore($last); //添加删除功能：
 
@@ -289,11 +319,10 @@ function render() {
       hashData.splice(index, 1);
       render();
     });
-  }); //下面这段话并不会随机获取背景图片
+  }); //下面这段话每次刷新页面，随机获取背景图片
 
   console.log("body.css", $("body").css("background-image"));
-  $("body").css("background-image", "url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302)"); //每次重新渲染并不会执行获取随机图片
-  // console.log("设置背景图");
+  $("body").css("background-image", "url(https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302)");
 }
 
 render();
@@ -387,9 +416,11 @@ $(".bt2").on("click", function () {
       url = ("https://" + url).toLowerCase();
     }
 
+    var lg = $("#in2").val();
+    console.log("lg", lg);
     hashData.push({
       logo: simpUrl(url)[0].toUpperCase(),
-      img: simpUrl(url)[0].toUpperCase(),
+      img: lg,
       urll: simpUrl(url),
       href: url
     }); //console.log(`$("#in1").val()`);
@@ -410,5 +441,13 @@ $(".bt2").on("click", function () {
 //   e.stopPropagation();
 //   e.preventDefault();
 // });
+//为解决手机端click以及touchstart事件的冲突
+// const Button = document.getElementById("targetButton");
+
+var clickEvent = function () {
+  if ("ontouchstart" in document.documentElement === true) return "touchstart";else return "click";
+}(); // Button.addEventListener(clickEvent, e => {
+//   console.log("things happened!");
+// });
 },{"./img/juejin.svg":"afD/","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"1jEL","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AK+L","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
-//# sourceMappingURL=main.162a560b.js.map
+//# sourceMappingURL=main.01645dd0.js.map
