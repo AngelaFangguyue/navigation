@@ -36,7 +36,7 @@ let $last = $(".last");
 let a = localStorage.getItem("hashDa");
 let hashL = JSON.parse(localStorage.getItem("hashDa"));
 console.log("a hashL", a, hashL);
-if (hashL.length === 0 || hashL === "" || hashL === null) {
+if (hashL === "" || hashL === null) {
   window.hashData = [
     {
       logo: "J",

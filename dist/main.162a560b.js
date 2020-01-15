@@ -201,7 +201,7 @@ var a = localStorage.getItem("hashDa");
 var hashL = JSON.parse(localStorage.getItem("hashDa"));
 console.log("a hashL", a, hashL);
 
-if (hashL.length === 0 || hashL === "" || hashL === null) {
+if (hashL === "" || hashL === null) {
   window.hashData = [{
     logo: "J",
     img: _juejin.default,
@@ -411,4 +411,4 @@ $(".bt2").on("click", function () {
 //   e.preventDefault();
 // });
 },{"./img/juejin.svg":"afD/","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"1jEL","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AK+L","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
-//# sourceMappingURL=main.7086d569.js.map
+//# sourceMappingURL=main.162a560b.js.map
