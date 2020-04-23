@@ -107,6 +107,7 @@ main.mai div.wra {
 main.mai div.wra a {
   margin-bottom: 25px;
 }
+
 /* 这是解决新增站点的div的下边距问题，这个问题是在修改点击其他标签之间的间隔也会跳转问题时产生的又一bug */
 .last {
   margin-bottom: 25px;
@@ -153,10 +154,12 @@ main.mai div.wra div.last {
 
   .last:hover {
     transform: translate3d(0, -10px, 0);
+    cursor: pointer;
     /* background-color: #fff; */
   }
   main.mai div.wra a:hover {
     transform: translate3d(0, -10px, 0);
+    cursor: pointer;
   }
   main.mai div.wra .con:hover {
     background-color: #fff;
@@ -193,6 +196,12 @@ main.mai div.wra div.con div.close {
 
 main.mai div.wra div.con:hover div.close {
   display: block;
+}
+
+@media screen and (max-width: 700px) {
+  main.mai div.wra div.con:hover div.close {
+    display: none;
+  }
 }
 
 main.mai div.wra div.con .iconadd {

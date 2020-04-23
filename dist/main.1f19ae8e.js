@@ -117,43 +117,43 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"afD/":[function(require,module,exports) {
-module.exports = "juejin.abfdc994.svg";
-},{}],"gJ9Y":[function(require,module,exports) {
-module.exports = "sifou.802f3938.png";
-},{}],"OXEt":[function(require,module,exports) {
-module.exports = "Vue.cb4025ab.png";
-},{}],"f5EN":[function(require,module,exports) {
-module.exports = "React.9c4899db.png";
-},{}],"yUSZ":[function(require,module,exports) {
-module.exports = "Angular.eed96449.png";
-},{}],"EO3B":[function(require,module,exports) {
-module.exports = "ant design.dda12cae.svg";
-},{}],"nXc9":[function(require,module,exports) {
-module.exports = "iview.846fc82d.svg";
-},{}],"mvJh":[function(require,module,exports) {
-module.exports = "element.bdeba2fb.png";
-},{}],"1jEL":[function(require,module,exports) {
-module.exports = "bilibili.b2c05f1d.png";
-},{}],"ytop":[function(require,module,exports) {
-module.exports = "github.65f27d79.png";
-},{}],"A6Ir":[function(require,module,exports) {
-module.exports = "github2.ce286451.png";
-},{}],"qfhl":[function(require,module,exports) {
-module.exports = "github3.06335c28.png";
-},{}],"uLZU":[function(require,module,exports) {
-module.exports = "yx.9348f7e0.png";
-},{}],"B4au":[function(require,module,exports) {
-module.exports = "yx2.e98dc29f.png";
-},{}],"ilno":[function(require,module,exports) {
-module.exports = "yx3.629d4d93.png";
-},{}],"AK+L":[function(require,module,exports) {
-module.exports = "zh.b30ef678.png";
-},{}],"JbG3":[function(require,module,exports) {
-module.exports = "zh2.fcfa1bfb.png";
-},{}],"zOyp":[function(require,module,exports) {
-module.exports = "zh3.2fd872ea.png";
-},{}],"epB2":[function(require,module,exports) {
+})({"img/juejin.svg":[function(require,module,exports) {
+module.exports = "/juejin.c3c97f58.svg";
+},{}],"img/sifou.png":[function(require,module,exports) {
+module.exports = "/sifou.e9cdf5c9.png";
+},{}],"img/Vue.png":[function(require,module,exports) {
+module.exports = "/Vue.06dda841.png";
+},{}],"img/React.png":[function(require,module,exports) {
+module.exports = "/React.05662dba.png";
+},{}],"img/Angular.png":[function(require,module,exports) {
+module.exports = "/Angular.bec3e279.png";
+},{}],"img/ant design.svg":[function(require,module,exports) {
+module.exports = "/ant design.dc53b349.svg";
+},{}],"img/iview.svg":[function(require,module,exports) {
+module.exports = "/iview.fc9b8abd.svg";
+},{}],"img/element.png":[function(require,module,exports) {
+module.exports = "/element.b87b6df1.png";
+},{}],"img/bilibili.png":[function(require,module,exports) {
+module.exports = "/bilibili.cd58a1aa.png";
+},{}],"img/github.png":[function(require,module,exports) {
+module.exports = "/github.8994e164.png";
+},{}],"img/github2.png":[function(require,module,exports) {
+module.exports = "/github2.8c1bd8db.png";
+},{}],"img/github3.png":[function(require,module,exports) {
+module.exports = "/github3.0855e0b5.png";
+},{}],"img/yx.png":[function(require,module,exports) {
+module.exports = "/yx.a1f953eb.png";
+},{}],"img/yx2.png":[function(require,module,exports) {
+module.exports = "/yx2.d521d8b8.png";
+},{}],"img/yx3.png":[function(require,module,exports) {
+module.exports = "/yx3.b19507ee.png";
+},{}],"img/zh.png":[function(require,module,exports) {
+module.exports = "/zh.f0e11eb7.png";
+},{}],"img/zh2.png":[function(require,module,exports) {
+module.exports = "/zh2.c8099299.png";
+},{}],"img/zh3.png":[function(require,module,exports) {
+module.exports = "/zh3.d1a91a76.png";
+},{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _juejin = _interopRequireDefault(require("./img/juejin.svg"));
@@ -264,9 +264,9 @@ function render() {
     console.log("hashdata foreach", node);
 
     if (node.img !== "") {
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">\n        <img src=\"").concat(node.img, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
+      $newA = $("<a href=\"".concat(node.href, "\">\n      <div class=\"con\">\n        <div class=\"logo\">\n        <img src=\"").concat(node.img, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
     } else {
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">").concat(node.logo, "</div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
+      $newA = $("<a href=\"".concat(node.href, "\">\n      <div class=\"con\">\n        <div class=\"logo\">").concat(node.logo, "</div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
     } // if (node.img.indexOf("http") === 0) {
     //   console.log('node.img.indexOf("http") === 0', node.img);
     //   $newA = $(`<a href='${node.href}'>
@@ -449,5 +449,209 @@ var clickEvent = function () {
 }(); // Button.addEventListener(clickEvent, e => {
 //   console.log("things happened!");
 // });
-},{"./img/juejin.svg":"afD/","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"1jEL","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AK+L","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
-//# sourceMappingURL=main.01645dd0.js.map
+},{"./img/juejin.svg":"img/juejin.svg","./img/sifou.png":"img/sifou.png","./img/Vue.png":"img/Vue.png","./img/React.png":"img/React.png","./img/Angular.png":"img/Angular.png","./img/ant design.svg":"img/ant design.svg","./img/iview.svg":"img/iview.svg","./img/element.png":"img/element.png","./img/bilibili.png":"img/bilibili.png","./img/github.png":"img/github.png","./img/github2.png":"img/github2.png","./img/github3.png":"img/github3.png","./img/yx.png":"img/yx.png","./img/yx2.png":"img/yx2.png","./img/yx3.png":"img/yx3.png","./img/zh.png":"img/zh.png","./img/zh2.png":"img/zh2.png","./img/zh3.png":"img/zh3.png"}],"C:/Users/18234/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
+
+module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
+var parent = module.bundle.parent;
+
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53010" + '/');
+
+  ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      var handled = false;
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
+        }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
+
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
+
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+}
+},{}]},{},["C:/Users/18234/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
+//# sourceMappingURL=/main.1f19ae8e.js.map
