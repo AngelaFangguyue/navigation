@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"afD/":[function(require,module,exports) {
+})({"afDE":[function(require,module,exports) {
 module.exports = "juejin.abfdc994.svg";
 },{}],"gJ9Y":[function(require,module,exports) {
 module.exports = "sifou.802f3938.png";
@@ -133,7 +133,7 @@ module.exports = "ant design.dda12cae.svg";
 module.exports = "iview.846fc82d.svg";
 },{}],"mvJh":[function(require,module,exports) {
 module.exports = "element.bdeba2fb.png";
-},{}],"1jEL":[function(require,module,exports) {
+},{}],"jELC":[function(require,module,exports) {
 module.exports = "bilibili.b2c05f1d.png";
 },{}],"ytop":[function(require,module,exports) {
 module.exports = "github.65f27d79.png";
@@ -147,7 +147,7 @@ module.exports = "yx.9348f7e0.png";
 module.exports = "yx2.e98dc29f.png";
 },{}],"ilno":[function(require,module,exports) {
 module.exports = "yx3.629d4d93.png";
-},{}],"AK+L":[function(require,module,exports) {
+},{}],"AKLh":[function(require,module,exports) {
 module.exports = "zh.b30ef678.png";
 },{}],"JbG3":[function(require,module,exports) {
 module.exports = "zh2.fcfa1bfb.png";
@@ -449,5 +449,5 @@ var clickEvent = function () {
 }(); // Button.addEventListener(clickEvent, e => {
 //   console.log("things happened!");
 // });
-},{"./img/juejin.svg":"afD/","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"1jEL","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AK+L","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
+},{"./img/juejin.svg":"afDE","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"jELC","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AKLh","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
 //# sourceMappingURL=main.01645dd0.js.map
