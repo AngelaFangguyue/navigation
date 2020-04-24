@@ -264,9 +264,9 @@ function render() {
     console.log("hashdata foreach", node);
 
     if (node.img !== "") {
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">\n        <img src=\"").concat(node.img, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
+      $newA = $("<a href=\"".concat(node.href, "\">\n      <div class=\"con\">\n        <div class=\"logo\">\n        <img src=\"").concat(node.img, "\">\n        </div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
     } else {
-      $newA = $("<a href='".concat(node.href, "'>\n      <div class=\"con\">\n        <div class=\"logo\">").concat(node.logo, "</div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
+      $newA = $("<a href=\"".concat(node.href, "\">\n      <div class=\"con\">\n        <div class=\"logo\">").concat(node.logo, "</div>\n        <div class=\"urll\">").concat(node.urll, "</div>\n        <div class=\"close\">\n          <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=", "#icon-iclose", "></use>\n          </svg></div>\n      </div>\n      </a>"));
     } // if (node.img.indexOf("http") === 0) {
     //   console.log('node.img.indexOf("http") === 0', node.img);
     //   $newA = $(`<a href='${node.href}'>
@@ -450,4 +450,4 @@ var clickEvent = function () {
 //   console.log("things happened!");
 // });
 },{"./img/juejin.svg":"afDE","./img/sifou.png":"gJ9Y","./img/Vue.png":"OXEt","./img/React.png":"f5EN","./img/Angular.png":"yUSZ","./img/ant design.svg":"EO3B","./img/iview.svg":"nXc9","./img/element.png":"mvJh","./img/bilibili.png":"jELC","./img/github.png":"ytop","./img/github2.png":"A6Ir","./img/github3.png":"qfhl","./img/yx.png":"uLZU","./img/yx2.png":"B4au","./img/yx3.png":"ilno","./img/zh.png":"AKLh","./img/zh2.png":"JbG3","./img/zh3.png":"zOyp"}]},{},["epB2"], null)
-//# sourceMappingURL=main.01645dd0.js.map
+//# sourceMappingURL=main.80c2a0c5.js.map

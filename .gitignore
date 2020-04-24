@@ -1,2 +1,6 @@
 .cache
+<<<<<<< HEAD
 node_modules
+=======
+.idea
+>>>>>>> d3ae5a42370c6afc18e754cf5708fbe54e21a449

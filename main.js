@@ -111,7 +111,7 @@ function render() {
   hashData.forEach((node, index) => {
     console.log("hashdata foreach", node);
     if (node.img !== "") {
-      $newA = $(`<a href='${node.href}'>
+      $newA = $(`<a href="${node.href}">
       <div class="con">
         <div class="logo">
         <img src="${node.img}">
@@ -124,7 +124,7 @@ function render() {
       </div>
       </a>`);
     } else {
-      $newA = $(`<a href='${node.href}'>
+      $newA = $(`<a href="${node.href}">
       <div class="con">
         <div class="logo">${node.logo}</div>
         <div class="urll">${node.urll}</div>
@@ -179,13 +179,15 @@ function render() {
 
     $newA.insertBefore($last);
     //添加删除功能：
-    $newA.on("click", ".close", e => {
-      //阻止冒泡
-      e.stopPropagation();
-      e.preventDefault();
-      hashData.splice(index, 1);
-      render();
-    });
+      $newA.on("click", ".close", e => {
+        //阻止冒泡
+        e.stopPropagation();
+        e.preventDefault();
+        hashData.splice(index, 1);
+        render();
+      });
+
+
   });
   //下面这段话每次刷新页面，随机获取背景图片
   console.log("body.css", $("body").css("background-image"));
